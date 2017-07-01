@@ -2,5 +2,6 @@
 <%=  simple_form_for  @recipe  do  |f|  %>
   <%= f.input  "title"  %>
   <%= f.input  "description"  %>
+  <%= f.input  :image, as: :file %>
   <%= f.submit  "Create  Recipe", data: { disable_with: "Create..." }, class: "btn  btn-default"  %>
 <%  end  %>
