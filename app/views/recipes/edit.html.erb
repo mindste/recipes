@@ -1,18 +1,2 @@
 <h1>Edit  Recipe</h1>
-<%=  simple_form_for  @recipe  do  |f|  %>
-  <div class="group">
-    <%= f.input  "title"  %>
-  </div>
-  <div class="group">
-    <%= f.input  "description"  %>
-  </div>
-  
-  <%  if  @recipe.image.present?  %>
-     <%=  image_tag(@recipe.image.thumb.url)  %>
-  <%  end  %>
-
-  <div class="group">
-    <%= f.input  :image, as: :file %>
-  </div>
-  <%= f.submit  "Create  Recipe", data: { disable_with: "Create..." }, class: "btn  btn-default"  %>
-<%  end  %>
+<%=  render  "form" %>

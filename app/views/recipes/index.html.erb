@@ -1,4 +1,17 @@
-<%  @recipes.each  do  |recipe|  %>
-   <h2><%=  link_to  recipe.title,  recipe  %></h2>
-  
-<%  end  %>
+<div class="row">
+  <%  @recipes.each  do  |recipe|  %>
+     <%= link_to recipe_path(recipe) do %>
+      <div class="col-md-4">
+           <% if recipe.image.present? %>
+            <%= image_tag(recipe.image.thumb.url, class: "thumbnail") %>
+           <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+           <% end %>
+         <% end %>
+
+         <h2><%=  link_to  recipe.title,  recipe  %></h2>
+      </div>
+    <!----index  page  image  show---->
+
+  <%  end  %>
+</div>
